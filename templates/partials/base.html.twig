@@ -25,7 +25,7 @@
 {% do assets.addCss('theme://css/sweetalert2.css', 87) %}
 {% do assets.addCss('theme://css/custom.css', 86) %}
 {% endblock %}
-{{ assets.css() }}{% if header.resume.general.bgcolor %}
+{{ assets.css()|raw }}{% if header.resume.general.bgcolor %}
 <style>
   .block-title h3::after,
   .section-title,
@@ -98,7 +98,7 @@
 {% do assets.addJs('theme://js/sweetalert2.all.js', {'priority': 86, 'group': 'bottom'}) %}
 {% do assets.addJs('theme://js/main.js', {'priority': 84, 'group': 'bottom'}) %}
 {% endblock %}
-{{ assets.js() }}{% if header.resume.general.onesignal %}
+{{ assets.js()|raw }}{% if header.resume.general.onesignal %}
 <link rel="manifest" href="/manifest.json" />
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
@@ -133,7 +133,7 @@
     </div>
 {% include 'partials/ajax-page.html.twig' %}
   </div>
-{{ assets.js('bottom') }}{% if header.resume.general.mautic_url %}
+{{ assets.js('bottom')|raw }}{% if header.resume.general.mautic_url %}
 <script>
   (function(w, d, t, u, n, a, m) {
     w['MauticTrackingObject'] = n;
