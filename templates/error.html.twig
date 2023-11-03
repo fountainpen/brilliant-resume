@@ -3,7 +3,7 @@
 {% do assets.addCss('theme://css/normalize.css', 98) %}
 {% do assets.addCss('theme://css/404.css', 97) %}
 {% endblock %}
-{{ assets.css() }}{% block content %}
+{{ assets.css()|raw }}{% block content|raw %}
 <div class="error-wrapper">
   <div class="container">
     <div class="row">
